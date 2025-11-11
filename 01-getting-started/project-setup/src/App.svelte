@@ -1,13 +1,18 @@
 <script>
+	import ContactCard from "./ContactCard.svelte";
+
 	let name = "Alpy";
-	let age = 39;
+	let age = 30;
+
+	// let uppercaseName; not required!
 
 	$: uppercaseName = name.toUpperCase();
 
 	$: console.log(name);
 
 	$: if (name === "Alparslan") {
-		age = 19;
+		console.log("It runs!");
+		age = 31;
 	}
 
 	function incrementAge() {
@@ -16,20 +21,21 @@
 
 	function changeName() {
 		name = "Alparslan";
-		age = 19;
 	}
 
 	function nameInput(event) {
-		name = event.target.value;
+		const enteredValue = event.target.value;
+		name = enteredValue;
 	}
 </script>
 
-<h1>Hello {uppercaseName} and my age is {age}!</h1>
-<button on:click={incrementAge}>change age</button>
-<!-- <button on:click={changeName}>change name</button> -->
-<!-- <input type="text" value="{name}" on:input="{nameInput}"> -->
-<input type="text" bind:value="{name}">
+<h1>Hello {uppercaseName}, my age is {age}!</h1>
+<button on:click={incrementAge}>Change Age</button>
+<!-- <button on:click="{changeName}">Change Name</button> -->
+<!-- <input type="text" value={name} on:input={nameInput} /> -->
+<input type="text" bind:value={name} />
 
+<ContactCard />
 
 <style>
 	h1 {
