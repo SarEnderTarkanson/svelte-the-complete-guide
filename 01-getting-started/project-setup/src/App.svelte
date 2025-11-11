@@ -2,7 +2,7 @@
 	import ContactCard from "./ContactCard.svelte";
 
 	let userName = "";
-	let age = 30;
+	let age = 39;
 	let jobTitle = "";
 	let shortDescription = "";
 	let userImage = "https://nyrami.com/assets/team/alpy.jpg";
