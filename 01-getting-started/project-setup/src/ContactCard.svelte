@@ -7,7 +7,8 @@
 
 <div class="contact-card">
     <header>
-        <div class="thumb">
+        <!-- <div class={userImage ? "thumb" : "thumb-placeholder"}> -->
+        <div class="thumb" class:thumb-placeholder="{!userImage}">
             <img src="{userImage}" alt="" />
         </div>
         <div class="user-data">
@@ -37,6 +38,12 @@
 
     .thumb {
         width: 33%;
+        height: 100%;
+    }
+
+    .thumb-placeholder {
+        background-color: #ccc;
+        width: 100%;
         height: 100%;
     }
 

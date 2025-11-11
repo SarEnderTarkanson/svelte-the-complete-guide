@@ -7,7 +7,7 @@
 	let shortDescription = "";
 	let userImage = "https://nyrami.com/assets/team/alpy.jpg";
 
-	// let uppercaseName; not required!
+	// let uppercaseName;
 
 	$: uppercaseName = userName.toUpperCase();
 
@@ -38,6 +38,7 @@
 <!-- <input type="text" value={name} on:input={nameInput} /> -->
 <input type="text" bind:value={userName} />
 <input type="text" bind:value={jobTitle} />
+<input type="text" bind:value={userImage} />
 <textarea rows="3" type="text" bind:value={shortDescription} />
 
 <ContactCard {userName} {jobTitle} {shortDescription} {userImage} />
