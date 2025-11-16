@@ -58,13 +58,16 @@
 {:else}
   <p style="color: red;">Please enter some data and then hit the button!</p>
 {/if}
-{#each createdContacts as createdContact}
+{#each createdContacts as createdContact, i}
+  <h2># {i}</h2>
   <ContactCard
     userName={createdContact.name}
     jobTitle={createdContact.jobTitle}
     description={createdContact.description}
     userImage={createdContact.userImage}
   />
+{:else}
+  <p>Please start adding some contacts, we found none!</p>
 {/each}
 
 <style>
